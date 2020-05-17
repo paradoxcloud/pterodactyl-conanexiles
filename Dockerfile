@@ -3,10 +3,10 @@ FROM        ubuntu:16.04
 MAINTAINER  paradox.cloud, <support@paradox.network>
 ENV         DEBIAN_FRONTEND noninteractive
 
-RUN         apt-get update \
+RUN         apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ xenial main' -y \
+            && apt-get update \
             && apt-get upgrade -y \
-            && apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ xenial main' -y \
-            && apt-get install -y xvfb \
+            && apt-get install -y --install-recommends xvfb winehq-stable\
             && update-ca-certificates \
             && useradd -m -d /home/container container
 
