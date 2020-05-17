@@ -6,7 +6,7 @@ cd /home/container
 # Make internal Docker IP address available to processes.
 export INTERNAL_IP=`ip route get 1 | awk '{print $NF;exit}'`
 export WINEARCH=win64 
-export WINEPREFIX=/home/steam/.wine64
+export WINEPREFIX=/home/container/steam/.wine64
 
 # Replace Startup Variables
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
