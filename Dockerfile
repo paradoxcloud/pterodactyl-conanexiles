@@ -11,8 +11,6 @@ RUN         apt-get update \
             && update-ca-certificates \
             && useradd -m -d /home/container container
 
-
-software-properties-common
 USER        container
 ENV         HOME /home/container
 WORKDIR     /home/container
