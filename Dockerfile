@@ -7,7 +7,7 @@ RUN         apt-get update \
             && apt-get upgrade -y \
             && dpkg --add-architecture i386 \
             && apt-get install -y lib32gcc1 software-properties-common ca-certificates apt-transport-https wget \
-            && wget -qO - https://dl.winehq.org/wine-builds/winehq.key | sudo apt-key add \
+            && wget -qO - https://dl.winehq.org/wine-builds/winehq.key | apt-key add \
             && apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ xenial main' -y \
             && update-ca-certificates \
             && apt-get update \
