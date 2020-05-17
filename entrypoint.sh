@@ -13,7 +13,8 @@ MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g'
 echo ":/home/container$ ${MODIFIED_STARTUP}"
 
 # Run the Server
-xvfb-run --auto-servernum --server-args='-screen 0 640x480x24:32' ${MODIFIED_STARTUP}
+#xvfb-run --auto-servernum --server-args='-screen 0 640x480x24:32'
+${MODIFIED_STARTUP}
 
 if [ $? -ne 0 ]; then
     echo "PTDL_CONTAINER_ERR: There was an error while attempting to run the start command."
