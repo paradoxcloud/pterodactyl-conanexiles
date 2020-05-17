@@ -5,6 +5,7 @@ ENV         DEBIAN_FRONTEND noninteractive
 
 RUN         apt-get update \
             && apt-get upgrade -y \
+            && apt-get install -y software-properties-common \
             && apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ xenial main' -y \
             && apt-get update \
             && apt-get install -y --install-recommends xvfb winehq-stable\
