@@ -5,7 +5,9 @@ ENV         DEBIAN_FRONTEND noninteractive
 
 RUN         apt-get update \
             && apt-get upgrade -y \
-            && apt-get install -y software-properties-common ca-certificates apt-transport-https \
+            && dpkg --add-architecture i386 \
+            && apt-get install -y lib32gcc1 software-properties-common ca-certificates apt-transport-https wget \
+            && wget -qO - https://dl.winehq.org/wine-builds/winehq.key | sudo apt-key add \
             && apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ xenial main' -y \
             && update-ca-certificates \
             && apt-get update \
